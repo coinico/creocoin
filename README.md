@@ -1,10 +1,11 @@
 Creocoin integration/staging tree
 ================================
 
-http://www.creocoin.org
+http://www.creocoin.com
 
 Copyright (c) 2009-2013 Bitcoin Developers
 Copyright (c) 2011-2013 Litecoin Developers
+Copyright (c) 2017-2023 Creocoin Developers
 
 What is Creocoin?
 ----------------
@@ -68,7 +69,7 @@ Unit tests for the core code are in `src/test/`. To compile and run them:
 
 Unit tests for the GUI code are in `src/qt/test/`. To compile and run them:
 
-    qmake BITCOIN_QT_TEST=1 -o Makefile.test bitcoin-qt.pro
+    qmake CREOCOIN_QT_TEST=1 -o Makefile.test creocoin-qt.pro
     make -f Makefile.test
     ./creocoin-qt_test
 
