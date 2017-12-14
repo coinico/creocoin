@@ -1,0 +1,9 @@
+Building Creocoin
+
+See doc/readme-qt.rst for instructions on building Creocoin-Qt,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Creocoin.
+
+See doc/build-*.txt for instructions on building creocoind,
+the intended-for-services, no-graphical-interface, reference
+implementation of Creocoin.
