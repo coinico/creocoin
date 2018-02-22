@@ -2237,8 +2237,8 @@ Adresa: %4
     </message>
     <message>
         <location line="-28"/>
-        <source>Listen for connections on &lt;port&gt; (default: 8822 or testnet: 18822)</source>
-        <translation>Čekat na spojení na &lt;portu&gt; (výchozí: 8822 nebo testnet: 18822)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 8844 or testnet: 18844)</source>
+        <translation>Čekat na spojení na &lt;portu&gt; (výchozí: 8844 nebo testnet: 18844)</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -2272,8 +2272,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+27"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 8821 or testnet: 18821)</source>
-        <translation>Čekat na JSON RPC spojení na &lt;portu&gt; (výchozí: 8821 nebo testnet: 18821)</translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 8843 or testnet: 18843)</source>
+        <translation>Čekat na JSON RPC spojení na &lt;portu&gt; (výchozí: 8843 nebo testnet: 18843)</translation>
     </message>
     <message>
         <location line="+37"/>
