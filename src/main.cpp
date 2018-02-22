@@ -31,7 +31,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0xbff11d78b7a0425fdbf989534c5efb6f16723893338aab2c927c663c58d33d27");
+uint256 hashGenesisBlock("0x0ade7badb18a4ad151cc15adff0713408d21920f45522a0b9bb88a5bf93777e1");
 static CBigNum bnProofOfWorkLimit = CBigNum().SetCompact(504365644); // Creocoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -1071,7 +1071,7 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 600000000000000;
+    int64 nSubsidy = 50000000000;
 
     // Subsidy is cut in half every 840000 blocks, which will occur approximately every 4 years
     nSubsidy >>= (nHeight / 23000000); // Creocoin: 840k blocks in ~4 years
@@ -1080,7 +1080,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 }
 
 static const int64 nTargetTimespan = 302400; // Creocoin: 3.5 days
-static const int64 nTargetSpacing = 15; // Creocoin: 2.5 minutes
+static const int64 nTargetSpacing = 120; // Creocoin: 2.5 minutes
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 //
@@ -2728,7 +2728,7 @@ bool LoadBlockIndex()
         pchMessageStart[1] = 0xc1;
         pchMessageStart[2] = 0xb7;
         pchMessageStart[3] = 0xdc;
-        hashGenesisBlock = uint256("0x2631f2dc17160d295d01a7845ef9e111a7e88ec3f7935c96caf14b93f3fe8f90");
+        hashGenesisBlock = uint256("0x1a2d31dd794b29e0742d62945c8aef518b59038537825fee69a30291553c55ec");
     }
 
     //
@@ -2761,26 +2761,26 @@ bool InitBlockIndex() {
         //   vMerkleTree: 97ddfbbae6
 
         // Genesis block
-        const char* pszTimestamp = "CreoCoin cryptocurrency!";
+        const char* pszTimestamp = "Another illustrious Build-a-Coin cryptocurrency!";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 600000000000000;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("a5d779917e58ae649a78f7fd77dd6d1be1b52377f050330c1739f2e10fd15e634129762e4e08b8082a92c8e6d00c75f3cf688b798dac5d523e92e8f87d9315290f") << OP_CHECKSIG;
+        txNew.vout[0].nValue = 50000000000;
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("2543c2fcc6766a92c8497d12840b4032a0846f97449de358e95cd3d4a57610f602a928c0dc5071b337a86066f4c95573b902d87028a17203c9498e53e33ec0855d") << OP_CHECKSIG;
         CBlock block;
         block.vtx.push_back(txNew);
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1513157022;
+        block.nTime    = 1519289800;
         block.nBits    = 504365644;
-        block.nNonce   = 1670708431;
+        block.nNonce   = 4040458621;
 
         if (fTestNet)
         {
-            block.nTime    = 1513157022;
-            block.nNonce   = 1373409130;
+            block.nTime    = 1519289800;
+            block.nNonce   = 2514839810;
         }
 
         //// debug print
@@ -2788,7 +2788,7 @@ bool InitBlockIndex() {
         printf("%s\n", hash.ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0x0d2cf8415f8ecd7412f07b994adc4a0f34bf75c064f205bfcd3ed296d0a3deb8"));
+        assert(block.hashMerkleRoot == uint256("0x7a7813bdce831c3ed4766d707f68dc3a85f7a3252ab5872da7808ffe691842ee"));
         block.print();
         assert(hash == hashGenesisBlock);
 
